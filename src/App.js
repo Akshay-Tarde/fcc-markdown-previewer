@@ -1,11 +1,58 @@
 import React from "react";
 import MarkdownOutput from "./MarkdownOutput";
+import "./styles/styles.css";
+
+const placeholder = `# Welcome to my React Markdown Previewer!
+
+## This is a sub-heading...
+### And here's some other cool stuff:
+
+Heres some code, \`<div></div>\`, between 2 backticks.
+
+\`\`\`
+// this is multi-line code:
+
+function anotherExample(firstLine, lastLine) {
+if (firstLine == "\`\`\`" && lastLine == "\`\`\`") {
+return multiLineCode;
+}
+}
+\`\`\`
+
+You can also make text **bold**... whoa!
+Or _italic_.
+Or... wait for it... **_both!_**
+And feel free to go crazy ~~crossing stuff out~~.
+
+There's also [links](https://www.freecodecamp.com), and
+> Block Quotes!
+
+And if you want to get really crazy, even tables:
+
+Wild Header | Crazy Header | Another Header?
+------------ | ------------- | -------------
+Your content can | be here, and it | can be here....
+And here. | Okay. | I think we get it.
+
+- And of course there are lists.
+  - Some are bulleted.
+     - With different indentation levels.
+        - That look like this.
+
+
+1. And there are numbererd lists too.
+1. Use just 1s if you want!
+1. And last but not least, let's not forget embedded images:
+
+![Thor Picture](https://res.cloudinary.com/da6k8i6ee/image/upload/v1535589766/Thor.jpg)`;
+
+const placeholder1 = placeholder.replace(/\r/gi, "<br/> &nbsp;");
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      markedInput: "",
+      markedInput: placeholder1,
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -18,13 +65,29 @@ class App extends React.Component {
 
   render() {
     const markup = this.state.markedInput;
+
     return (
-      <div className="container">
+      <div>
+        <h1 className="firstHeader">Convert your Markdown here .</h1>
         <div>
-          <textarea id="editor" onChange={this.handleChange}></textarea>
-        </div>
-        <div id="preview">
-          <MarkdownOutput source={markup} />
+          <div className="container">
+            <div className="toolbar">
+              <h2 className="editor-label">Editor</h2>
+              <textarea
+                id="editor"
+                rows="20"
+                cols="100"
+                value={this.state.markedInput}
+                onChange={this.handleChange}
+              ></textarea>
+            </div>
+            <br />
+            <br />
+            <br />
+
+            <h2 className="preview-label">Markdown Output</h2>
+            <MarkdownOutput id="preview" source={markup} />
+          </div>
         </div>
       </div>
     );

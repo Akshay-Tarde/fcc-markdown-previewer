@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown";
 
 function MarkdownOutput(props) {
   return (
-    <div>
+    <div id="preview">
       <ReactMarkdown source={props.source} />
     </div>
   );

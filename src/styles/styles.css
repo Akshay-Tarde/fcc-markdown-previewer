@@ -1,0 +1,89 @@
+body {
+  background-color: lightblue;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.firstHeader {
+  text-align: center;
+}
+
+#editor {
+  background-color: whitesmoke;
+  padding: 0 0 0 0;
+  font-size: 16px;
+}
+
+.editor-label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 920px;
+  height: 50px;
+  background-color: #3dadf2;
+  font-weight: 600;
+  padding: 0 0 0 0;
+}
+
+.toolbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#preview {
+  background-color: #whitesmoke;
+  width: 80%;
+  height: 400px;
+  overflow: auto;
+  padding: 10px 10px 10px 0px;
+  white-space: pre-line;
+}
+
+#preview code {
+  background-color: white;
+  padding: 1px 4px 2px 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.preview-label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 1100px;
+  height: 50px;
+  background-color: #3dadf2;
+  font-weight: 600;
+  padding: 0 0 0 0;
+}
+/*# sourceMappingURL=styles.css.map */
